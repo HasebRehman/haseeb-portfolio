@@ -273,6 +273,22 @@ a:focus{
     width: 100%;
 }
 
+.btn-default.btn-border{
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid var(--divider-color);
+	color: var(--white-color);
+}
+
+.btn-default.btn-border::before{
+	background-color: var(--accent-color);
+	background-image: url('../images/arrow-white.svg');
+}
+
+.btn-default.btn-border:hover{
+	color: var(--bg-color);
+	border-color: var(--primary-color);
+}
+
 .readmore-btn{
 	position: relative;
 	display: inline-block;
@@ -6449,7 +6465,7 @@ header.main-header.main-header-elite .navbar{
 
 .hero-content-elite .section-title{
 	position: relative;
-	margin-right: -210px;
+	margin-right: -320px;
 	z-index: 2;
 }
 
@@ -6463,6 +6479,11 @@ header.main-header.main-header-elite .navbar{
 
 .hero-content-elite .section-title h1 span{
 	color: var(--accent-color);
+}
+
+.hero-content-elite .section-title h1 span.hero-line-nowrap{
+	color: var(--primary-color);
+	white-space: nowrap;
 }
 
 .hero-content-body-elite{
@@ -7437,6 +7458,17 @@ header.main-header.main-header-elite .navbar{
 
 .faq-accordion-elite .accordion-item .accordion-body p:last-child{
     margin: 0;
+}
+
+.faq-accordion-elite .accordion-item .accordion-body a{
+    color: var(--white-color, #ffffff);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.faq-accordion-elite .accordion-item .accordion-body a:hover{
+    color: var(--accent-color, #ff4c24);
+    text-decoration: none;
 }
 
 .our-testimonial-elite{
