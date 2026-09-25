@@ -174,6 +174,20 @@
 		});
 	}
 
+	/* Tools Slider JS */
+	if ($('.tools-slider').length) {
+		const tools_slider = new Swiper('.tools-slider .swiper', {
+			slidesPerView : 1,
+			speed: 1200,
+			spaceBetween: 30,
+			loop: true,
+			autoplay: {
+				delay: 3500,
+				disableOnInteraction: false,
+			},
+		});
+	}
+
 	/* Testimonial Slider Royal JS */
 	if ($('.testimonial-slider-royal').length) {
 		const testimonial_slider_royal = new Swiper('.testimonial-slider-royal .swiper', {
