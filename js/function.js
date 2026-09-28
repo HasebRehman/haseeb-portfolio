@@ -454,33 +454,39 @@
 	});
 
 	function submitForm(){
-		/* Ajax call to submit form */
+		var $submitBtn = $contactform.find('button[type="submit"]');
+		var originalBtnHtml = $submitBtn.html();
+		
+		// Set loading state
+		$submitBtn.prop('disabled', true).html('<i class="fa fa-spinner fa-spin me-2"></i> Sending...');
+		$("#msgSubmit").empty().hide();
+
+		/* Ajax call to submit form to /api/contact */
 		$.ajax({
 			type: "POST",
-			url: "form-process.php",
+			url: "/api/contact",
 			data: $contactform.serialize(),
-			success : function(text){
-				if (text === "success"){
-					formSuccess();
+			dataType: "json",
+			success: function(response){
+				$submitBtn.prop('disabled', false).html(originalBtnHtml);
+				if (response && response.success){
+					$contactform[0].reset();
+					$("#msgSubmit").html('<div style="margin-top: 20px; padding: 14px 20px; border-radius: 10px; background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.35); color: #25D366; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-check" style="font-size: 18px;"></i> ' + (response.message || 'Thank you! Your message has been sent successfully.') + '</div>').fadeIn();
 				} else {
-					submitMSG(false,text);
+					var errText = (response && response.message) ? response.message : 'An error occurred while sending your message.';
+					$("#msgSubmit").html('<div style="margin-top: 20px; padding: 14px 20px; border-radius: 10px; background: rgba(255, 77, 77, 0.12); border: 1px solid rgba(255, 77, 77, 0.35); color: #ff5252; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-exclamation" style="font-size: 18px;"></i> ' + errText + '</div>').fadeIn();
 				}
+			},
+			error: function(xhr){
+				$submitBtn.prop('disabled', false).html(originalBtnHtml);
+				var errMsg = "Failed to send message. Please try again or reach out on WhatsApp.";
+				try {
+					var parsed = JSON.parse(xhr.responseText);
+					if (parsed && parsed.message) errMsg = parsed.message;
+				} catch(e) {}
+				$("#msgSubmit").html('<div style="margin-top: 20px; padding: 14px 20px; border-radius: 10px; background: rgba(255, 77, 77, 0.12); border: 1px solid rgba(255, 77, 77, 0.35); color: #ff5252; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px;"><i class="fa-solid fa-circle-exclamation" style="font-size: 18px;"></i> ' + errMsg + '</div>').fadeIn();
 			}
 		});
-	}
-
-	function formSuccess(){
-		$contactform[0].reset();
-		submitMSG(true, "Message Sent Successfully!")
-	}
-
-	function submitMSG(valid, msg){
-		if(valid){
-			var msgClasses = "h4 text-success";
-		} else {
-			var msgClasses = "h4 text-danger";
-		}
-		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 	}
 	/* Contact form validation end */
 
