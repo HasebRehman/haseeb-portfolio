@@ -1336,16 +1336,34 @@ header.main-header .header-sticky.active{
 
 .section-footer-text.section-satisfy-img .satisfy-client-image{
 	border-color: var(--bg-color);
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.section-footer-text.section-satisfy-img .satisfy-client-image figure{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: block;
 }
 
 .section-footer-text.section-satisfy-img .satisfy-client-image figure img{
-	max-width: 30px;
+	width: 32px;
+	height: 32px;
+	max-width: 32px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
 }
 
 .section-footer-text.section-satisfy-img .satisfy-client-image.add-more{
 	width: 32px;
 	height: 32px;
     margin-left: -10px;
+	border-radius: 50%;
 }
 
 .section-footer-text.section-satisfy-img .satisfy-client-image.add-more img{
@@ -1370,6 +1388,8 @@ header.main-header .header-sticky.active{
     border-radius: 50%;
     overflow: hidden;	
     z-index: 1;
+    width: 40px;
+    height: 40px;
 }
 
 .satisfy-client-image:first-child{
@@ -1378,12 +1398,19 @@ header.main-header .header-sticky.active{
 
 .satisfy-client-image figure{
 	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
 }
 
 .satisfy-client-image figure img{
-	width: 100%;
+	width: 40px;
     max-width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
+    display: block;
 }
 
 .satisfy-client-image.add-more{
@@ -2222,6 +2249,9 @@ header.main-header .header-sticky.active{
 .testimonial-author-image figure img{
 	width: 100%;
 	max-width: 50px;
+	height: 50px;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
 	border-radius: 50%;
 }
 
@@ -6061,6 +6091,8 @@ header.main-header .header-sticky.active{
 	}
 
 	.testimonial-author-image figure img{
+		width: 44px;
+		height: 44px;
 		max-width: 44px;
 	}
 
