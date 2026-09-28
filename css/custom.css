@@ -568,6 +568,14 @@ header.main-header .header-sticky.active{
 	position: relative;
 }
 
+.main-menu #menu li.nav-item-mobile-only{
+	display: none !important;
+}
+
+.slicknav_nav li.nav-item-mobile-only{
+	display: block !important;
+}
+
 .main-menu ul li a{
 	font-size: 18px;
 	font-weight: 500;
@@ -8345,8 +8353,33 @@ header.main-header.main-header-elite .navbar{
 
 @media only screen and (max-width: 767px){
 
+	.hero-content-elite .section-title h1{
+		font-size: clamp(32px, 8.5vw, 42px);
+		line-height: 1.18em;
+	}
+
+	.hero-content-elite .section-title h1 span.hero-line-nowrap{
+		white-space: normal;
+	}
+
 	.hero-image-box-elite{
-		padding-right: 45px;
+		padding-right: 0;
+		max-width: 480px;
+		margin: 0 auto;
+	}
+
+	.hero-image-elite figure{
+		padding: 20px 0 0;
+	}
+
+	.hero-image-elite figure img{
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+
+	.hero-image-box-elite .years-experience-circle-elite{
+		display: none !important;
 	}
 
 	.hero-content-body-elite{
@@ -8355,14 +8388,6 @@ header.main-header.main-header-elite .navbar{
 
 	.hero-content-body-elite .video-play-button-elite{
 		margin-left: 10px;
-	}
-
-	.hero-image-box-elite .years-experience-circle-elite{
-		bottom: 50px;
-	}
-
-	.years-experience-circle-elite figure img{
-		max-width: 90px;
 	}
 
 	.about-us-image-elite figure img{
