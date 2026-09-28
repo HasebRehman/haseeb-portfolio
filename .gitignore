@@ -1,6 +1,4 @@
 # Environment and Secrets
-.env
-.env.local
 .env.*.local
 *.env
 !*.env.example
@@ -26,7 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # IDE & Editors
-.vscode/
 .idea/
 *.suo
 *.ntvs*
@@ -38,3 +35,4 @@ yarn-error.log*
 branch_structure.json
 temp_auto_push.bat
 temp_interactive_push.bat
+config.bat
