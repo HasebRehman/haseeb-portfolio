@@ -17,7 +17,8 @@ const MIME_TYPES = {
   '.woff2': 'font/woff2',
   '.ttf': 'font/ttf',
   '.eot': 'application/vnd.ms-fontobject',
-  '.webp': 'image/webp'
+  '.webp': 'image/webp',
+  '.pdf': 'application/pdf'
 };
 
 const server = http.createServer((req, res) => {
