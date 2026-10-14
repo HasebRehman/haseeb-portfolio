@@ -1,4 +1,6 @@
 # Environment and Secrets
+.env
+.env.*
 .env.*.local
 *.env
 !*.env.example
@@ -24,6 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # IDE & Editors
+.vscode/
 .idea/
 *.suo
 *.ntvs*

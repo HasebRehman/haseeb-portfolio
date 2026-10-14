@@ -5,6 +5,7 @@ import urllib.parse
 import json
 import importlib
 import email_service
+import chatbot_service
 
 PORT = 3000
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
@@ -69,6 +70,38 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header("Access-Control-Allow-Origin", "*")
                 self.end_headers()
                 self.wfile.write(json.dumps({"success": False, "message": f"Server error: {str(e)}"}).encode("utf-8"))
+            return
+
+        if path in ("/api/chat", "/api/chat/"):
+            try:
+                importlib.reload(chatbot_service)
+                content_length = int(self.headers.get("Content-Length", 0))
+                body = self.rfile.read(content_length).decode("utf-8") if content_length > 0 else "{}"
+                data = json.loads(body) if body else {}
+
+                user_message = data.get("message", "").strip()
+                client_ip = self.client_address[0] if self.client_address else "127.0.0.1"
+                user_id = data.get("user_id") or client_ip
+                history = data.get("history", [])
+
+                result = chatbot_service.process_chat(user_message, user_id, history)
+
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(json.dumps(result).encode("utf-8"))
+            except Exception as e:
+                fallback_answer = chatbot_service.get_default_answer("general")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                self.end_headers()
+                self.wfile.write(json.dumps({
+                    "success": True,
+                    "answer": fallback_answer,
+                    "provider": "local-fallback"
+                }).encode("utf-8"))
             return
 
         return super().do_POST()
@@ -143,7 +176,11 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 return
         super().send_error(code, message, explain)
 
+class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    daemon_threads = True
+    allow_reuse_address = True
+
 if __name__ == "__main__":
-    with socketserver.TCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
-        print(f"Serving at http://localhost:{PORT} with clean URLs, custom 404, and /api/contact handler...")
+    with ThreadedTCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
+        print(f"Serving at http://localhost:{PORT} with clean URLs, custom 404, and /api/contact & /api/chat handlers...")
         httpd.serve_forever()
