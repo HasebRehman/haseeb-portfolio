@@ -164,6 +164,11 @@ class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
                 return translated + ".html"
         return translated
 
+    def end_headers(self):
+        if hasattr(self, "path") and (self.path.endswith(".pdf") or ".pdf?" in self.path):
+            self.send_header("Content-Disposition", 'attachment; filename="Haseeb_Rehman_CV.pdf"')
+        super().end_headers()
+
     def send_error(self, code, message=None, explain=None):
         if code == 404:
             error_page = os.path.join(DIRECTORY, "404.html")

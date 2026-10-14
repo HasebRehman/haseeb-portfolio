@@ -109,7 +109,11 @@ const server = http.createServer((req, res) => {
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-    res.writeHead(200, { 'Content-Type': contentType });
+    const headers = { 'Content-Type': contentType };
+    if (ext === '.pdf') {
+      headers['Content-Disposition'] = 'attachment; filename="Haseeb_Rehman_CV.pdf"';
+    }
+    res.writeHead(200, headers);
     fs.createReadStream(filePath).pipe(res);
   });
 });
