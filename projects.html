@@ -42,8 +42,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- SlickNav Css -->
 	<link href="css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
 	<!-- Font Awesome Icon Css-->
 	<link href="css/all.min.css" rel="stylesheet" media="screen">
 	<!-- Animated Css -->
@@ -56,6 +54,36 @@
 	<link href="css/custom.css" rel="stylesheet" media="screen">
 	<!-- AI Chatbot Css -->
 	<link href="css/chatbot.css" rel="stylesheet" media="screen">
+	<!-- Performance & Smooth Scrolling -->
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+		.project-item {
+			transform: translateZ(0);
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+		}
+		.page-projects {
+			contain: content;
+		}
+	</style>
+	<script>
+		// Fast preloader dismiss: never hold content hostage
+		(function () {
+			function dismiss() {
+				var p = document.querySelector('.preloader');
+				if (p && p.style.display !== 'none') {
+					p.style.transition = 'opacity 0.25s ease';
+					p.style.opacity = '0';
+					setTimeout(function () { p.style.display = 'none'; }, 260);
+				}
+			}
+			document.addEventListener('DOMContentLoaded', dismiss);
+			window.addEventListener('load', dismiss);
+			setTimeout(dismiss, 350);
+		})();
+	</script>
 </head>
 <body>
 
@@ -131,7 +159,7 @@
     <!-- Page Projects Start -->
     <div class="page-projects">
         <div class="container">
-            <div class="row">
+            <div class="row" id="projectsContainer">
                 <!-- Project 1: Veylohr -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
@@ -139,7 +167,7 @@
                         <div class="project-item-image">
                             <a href="https://veylohr.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_1.jpg" alt="Veylohr">
+                                    <img loading="eager" decoding="async" fetchpriority="high" src="images/haseb_web_mockups_1.jpg" alt="Veylohr">
                                 </figure>
                             </a>
                         </div>
@@ -157,11 +185,11 @@
                 <!-- Project 2: Lizzt -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.05s">
                         <div class="project-item-image">
                             <a href="https://lizzt.app/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_12.jpg" alt="Lizzt">
+                                    <img loading="eager" decoding="async" fetchpriority="high" src="images/haseb_web_mockups_12.jpg" alt="Lizzt">
                                 </figure>
                             </a>
                         </div>
@@ -179,11 +207,11 @@
                 <!-- Project 3: Pakhims -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.1s">
                         <div class="project-item-image">
                             <a href="https://pakhims.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_6.jpg" alt="Pakhims">
+                                    <img loading="eager" decoding="async" fetchpriority="high" src="images/haseb_web_mockups_6.jpg" alt="Pakhims">
                                 </figure>
                             </a>
                         </div>
@@ -205,7 +233,7 @@
                         <div class="project-item-image">
                             <a href="https://ecommerce-one-tau-62.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_2.jpg" alt="VendoSphere">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_2.jpg" alt="VendoSphere">
                                 </figure>
                             </a>
                         </div>
@@ -223,11 +251,11 @@
                 <!-- Project 5: Illinois Dental -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.05s">
                         <div class="project-item-image">
                             <a href="https://dental-website-lovat.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_16.jpg" alt="Illinois Dental">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_16.jpg" alt="Illinois Dental">
                                 </figure>
                             </a>
                         </div>
@@ -245,11 +273,11 @@
                 <!-- Project 6: Opa Bar -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.1s">
                         <div class="project-item-image">
                             <a href="https://opa-sable-seven.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_7.jpg" alt="Opa Bar">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_7.jpg" alt="Opa Bar">
                                 </figure>
                             </a>
                         </div>
@@ -271,7 +299,7 @@
                         <div class="project-item-image">
                             <a href="https://plumbing-seven-kappa.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_3.jpg" alt="SOTO">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_3.jpg" alt="SOTO">
                                 </figure>
                             </a>
                         </div>
@@ -289,11 +317,11 @@
                 <!-- Project 8: Namanjalala Water Initiative -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.05s">
                         <div class="project-item-image">
                             <a href="https://blue-tapir-629932.hostingersite.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_9.jpg" alt="Namanjalala Water Initiative">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_9.jpg" alt="Namanjalala Water Initiative">
                                 </figure>
                             </a>
                         </div>
@@ -311,11 +339,11 @@
                 <!-- Project 9: Office Odyssey -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.1s">
                         <div class="project-item-image">
                             <a href="https://officeodyssey.maudenatasha.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_8.jpg" alt="Office Odyssey">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_8.jpg" alt="Office Odyssey">
                                 </figure>
                             </a>
                         </div>
@@ -337,7 +365,7 @@
                         <div class="project-item-image">
                             <a href="https://maudesgames.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_10.jpg" alt="Maude's Games">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_10.jpg" alt="Maude's Games">
                                 </figure>
                             </a>
                         </div>
@@ -355,11 +383,11 @@
                 <!-- Project 11: Hassan's Designs -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.05s">
                         <div class="project-item-image">
                             <a href="https://hassan-portfolio-lemon.vercel.app/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_17.jpg" alt="Hassan's Designs">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_17.jpg" alt="Hassan's Designs">
                                 </figure>
                             </a>
                         </div>
@@ -377,11 +405,11 @@
                 <!-- Project 12: Kiccla -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.1s">
                         <div class="project-item-image">
                             <a href="https://kiccla.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_13.jpg" alt="Kiccla">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_13.jpg" alt="Kiccla">
                                 </figure>
                             </a>
                         </div>
@@ -403,7 +431,7 @@
                         <div class="project-item-image">
                             <a href="https://landing-page.kiccla.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_15.jpg" alt="Kiccla Landing Page">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_15.jpg" alt="Kiccla Landing Page">
                                 </figure>
                             </a>
                         </div>
@@ -421,11 +449,11 @@
                 <!-- Project 14: Kiccla Volunteer Portal -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.05s">
                         <div class="project-item-image">
                             <a href="https://kicclavolunteerportfolio.maudenatasha.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_14.jpg" alt="Kiccla Volunteer Portal">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_14.jpg" alt="Kiccla Volunteer Portal">
                                 </figure>
                             </a>
                         </div>
@@ -443,11 +471,11 @@
                 <!-- Project 15: SeekemHub -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.1s">
                         <div class="project-item-image">
                             <a href="https://seekemhub.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_4.jpg" alt="SeekemHub">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_4.jpg" alt="SeekemHub">
                                 </figure>
                             </a>
                         </div>
@@ -469,7 +497,7 @@
                         <div class="project-item-image">
                             <a href="https://portfolio.seekemhub.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_5.jpg" alt="SeekemHub Landing Page">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_5.jpg" alt="SeekemHub Landing Page">
                                 </figure>
                             </a>
                         </div>
@@ -487,11 +515,11 @@
                 <!-- Project 17: Maison de Maude -->
                 <div class="col-xl-4 col-md-6">
                     <!-- Project Item Start -->
-                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.05s">
                         <div class="project-item-image">
                             <a href="https://maisondemaude.com/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="images/haseb_web_mockups_11.jpg" alt="Maison de Maude">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_11.jpg" alt="Maison de Maude">
                                 </figure>
                             </a>
                         </div>
@@ -504,6 +532,37 @@
                         </div>
                     </div>
                     <!-- Project Item End -->
+                </div>
+
+                <!-- Project 18: Connect 2 Success -->
+                <div class="col-xl-4 col-md-6">
+                    <!-- Project Item Start -->
+                    <div class="project-item box-border-gradiant wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="project-item-image">
+                            <a href="https://connect2success.com.au/" target="_blank" rel="noopener noreferrer" data-cursor-text="View">
+                                <figure class="image-anime">
+                                    <img loading="lazy" decoding="async" src="images/haseb_web_mockups_18.jpg" alt="Connect 2 Success">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="project-item-content">
+                            <ul>
+                                <li><a href="https://connect2success.com.au/" target="_blank" rel="noopener noreferrer">Web Design</a></li>
+                            </ul>
+                            <h2><a href="https://connect2success.com.au/" target="_blank" rel="noopener noreferrer">Connect 2 Success</a></h2>
+                            <p>Professional coaching and corporate consulting web platform.</p>
+                        </div>
+                    </div>
+                    <!-- Project Item End -->
+                </div>
+            </div>
+
+            <!-- Load More Projects Button -->
+            <div class="row mt-4" id="loadMoreProjectsRow">
+                <div class="col-lg-12 text-center">
+                    <button type="button" id="loadMoreProjectsBtn" class="btn-default">
+                        <span id="loadMoreText">Load More Projects</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -630,15 +689,8 @@
     <script src="js/validator.min.js"></script>
     <!-- SlickNav js file -->
     <script src="js/jquery.slicknav.js"></script>
-    <!-- Swiper js file -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Counter js file -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
     <!-- Magnific js file -->
     <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
     <!-- Parallax js -->
     <script src="js/parallaxie.js"></script>
     <!-- MagicCursor js file -->
@@ -647,14 +699,74 @@
     <!-- Text Effect js file -->
     <script src="js/SplitText.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
     <!-- Wow js file -->
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
     <!-- AI Chatbot Controller -->
     <script src="js/chatbot.js"></script>
+    <!-- Load More Projects Script (Show 6 initially, reveal 6 on click) -->
+    <script>
+    (function () {
+        'use strict';
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.getElementById('projectsContainer');
+            var loadMoreBtn = document.getElementById('loadMoreProjectsBtn');
+            var loadMoreRow = document.getElementById('loadMoreProjectsRow');
+            if (!container || !loadMoreBtn) return;
+
+            var projectCols = Array.prototype.slice.call(container.children);
+            var BATCH_SIZE = 6;
+            var currentlyVisible = 0;
+
+            function updateView() {
+                var total = projectCols.length;
+                var nextTarget = Math.min(currentlyVisible + BATCH_SIZE, total);
+
+                for (var i = 0; i < total; i++) {
+                    var col = projectCols[i];
+                    if (i < nextTarget) {
+                        col.style.display = '';
+                        var wowItem = col.querySelector('.wow');
+                        if (wowItem) {
+                            wowItem.style.visibility = 'visible';
+                            if (!wowItem.classList.contains('animated')) {
+                                wowItem.classList.add('animated');
+                            }
+                        }
+                    } else {
+                        col.style.display = 'none';
+                    }
+                }
+
+                currentlyVisible = nextTarget;
+                var remaining = total - currentlyVisible;
+
+                if (remaining <= 0) {
+                    if (loadMoreRow) {
+                        loadMoreRow.style.display = 'none';
+                    }
+                } else {
+                    if (loadMoreRow) {
+                        loadMoreRow.style.display = '';
+                    }
+                }
+
+                if (window.ScrollTrigger) {
+                    window.ScrollTrigger.refresh();
+                }
+            }
+
+            updateView();
+
+            loadMoreBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                updateView();
+            });
+        });
+    })();
+    </script>
+
 </body>
 </html>
 
