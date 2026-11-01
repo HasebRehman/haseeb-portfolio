@@ -47,7 +47,7 @@ HASEEB_PROFILE = {
         "whatsapp_link": "https://wa.me/923268795099",
         "linkedin": "https://www.linkedin.com/in/haseebrehmanweb/",
         "github": "https://github.com/HasebRehman",
-        "cv_download": "/public/CV-2/Haseeb_Rehman_CV.pdf"
+        "cv_download": "/public/Haseeb_Rehman_CV.pdf"
     },
     "skills": {
         "frontend": ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Bootstrap 5", "GSAP animations", "HTML5", "CSS3", "Responsive UI"],
@@ -107,13 +107,19 @@ Key Information about Haseeb Rehman:
   * GitHub: {HASEEB_PROFILE['contacts']['github']}
   * Resume / CV: {HASEEB_PROFILE['contacts']['cv_download']}
 
-STRICT INSTRUCTIONS & RESPONSE RULES:
-1. ONLY answer questions related to Haseeb Rehman, his portfolio, skills, projects, work, experience, services, and hiring/contacting him.
-2. If asked about general unrelated topics (e.g. math problems, general coding homework, recipes, politics, weather, entertainment), politely decline and state:
-   "I am Haseeb Rehman's dedicated portfolio assistant. I can only assist with questions regarding Haseeb's background, technical skills, web & SaaS projects, and services. Feel free to ask about his work or how to hire him!"
-3. If asked about services he does NOT offer (such as graphic designing, digital marketing, etc.), clearly state that Haseeb does not offer them, and highlight his core strengths in Full-Stack Web Development, SaaS Platforms, and Custom AI Integrations.
-4. COMPLETION GUARANTEE: ALWAYS finish every thought, bullet point, and sentence completely. NEVER leave a sentence half-finished or truncated. Keep answers concise (between 80 and 180 words) and nicely formatted in markdown.
-5. Always be polite, professional, and invite the visitor to reach out directly to Haseeb on WhatsApp ({HASEEB_PROFILE['contacts']['whatsapp']}) or Email ({HASEEB_PROFILE['contacts']['email']}).
+STRICT INSTRUCTIONS & RESPONSE RULES (EXTREME CONCISENESS):
+1. ALWAYS answer directly and strictly to the point. Give ONLY what was asked — no extra background, no life stories, no generic filler.
+2. MAXIMUM LENGTH: 1 to 2 short sentences. If listing items, provide maximum 2-3 brief bullets.
+3. GREETINGS (e.g. "hi", "hello", "hey"):
+   - Respond ONLY with a friendly one-liner: "Hey! How can I help you with Haseeb's work or services?"
+   - NEVER introduce yourself with a long robotic self-intro.
+4. SPECIFIC QUESTIONS:
+   - "who is he / about him" -> "Haseeb Rehman is a Senior Full-Stack & SaaS Web Developer with 3+ years experience and 50+ delivered projects."
+   - "skills / tech stack" -> "Core stack: React, Next.js, TypeScript, Node.js, Python, PostgreSQL, and AI integrations."
+   - "contact / hire" -> "You can reach Haseeb on WhatsApp at +92 326 8795099 or email at haseebrehman3460@gmail.com."
+   - "projects" -> "Notable projects include Veylohr (HR SaaS), Lizzt (task app), and VendoSphere (e-commerce)."
+   - "services" -> "Haseeb builds full-stack web applications, SaaS platforms, and custom AI chatbots."
+5. Unrelated questions: Respond ONLY with: "I can only answer questions related to Haseeb's portfolio and development work."
 """
 
 # Scope guardrail patterns: keywords that indicate the query is on-topic
@@ -193,106 +199,69 @@ def get_default_answer(user_query: str) -> str:
     # 0. Services NOT Offered: Graphic design, marketing, etc.
     if re.search(r"\b(graphic|designing|logo|marketing|seo\s+campaign|social\s+media|video\s+edit)\b", q):
         return (
-            "**Services Clarification ℹ️**\n\n"
-            "Haseeb Rehman focuses strictly on **Full-Stack Web Development, SaaS Platform Engineering, and Custom AI Integrations**.\n\n"
-            "He does **not** provide graphic designing, logo design, or digital marketing services. However, if you need a high-performance web application, SaaS platform, or custom API built, Haseeb delivers end-to-end development!\n\n"
-            "• Explore his core capabilities on the [Services Page](/services).\n"
-            "• Or contact Haseeb directly on [WhatsApp (+92 326 8795099)](https://wa.me/923268795099) to discuss your software project."
+            "Haseeb focuses exclusively on **Full-Stack Web Development, SaaS Applications, and AI Integrations**. He does not provide graphic design or marketing services."
         )
 
     # 1. Contact & Hire & WhatsApp & Email
     if re.search(r"\b(contact|hire|email|whatsapp|phone|reach|call|touch|quote|rate|price|pricing|freelance)\b", q):
         return (
-            "**Let's Connect with Haseeb Rehman! 🚀**\n\n"
-            "Haseeb is currently available for freelance projects, SaaS consulting, and full-time remote contracts.\n\n"
+            "You can connect with Haseeb directly via:\n\n"
             "• **WhatsApp:** [+92 326 8795099](https://wa.me/923268795099)\n"
             "• **Email:** [haseebrehman3460@gmail.com](mailto:haseebrehman3460@gmail.com)\n"
-            "• **LinkedIn:** [linkedin.com/in/haseebrehmanweb](https://www.linkedin.com/in/haseebrehmanweb/)\n"
-            "• **GitHub:** [github.com/HasebRehman](https://github.com/HasebRehman)\n\n"
-            "Feel free to drop a message directly on WhatsApp for the quickest response!"
+            "• **LinkedIn:** [linkedin.com/in/haseebrehmanweb](https://www.linkedin.com/in/haseebrehmanweb/)"
         )
 
     # 2. CV / Resume
     if re.search(r"\b(cv|resume)\b", q):
         return (
-            "**Download Haseeb Rehman's CV 📄**\n\n"
-            "You can download his updated curriculum vitae directly using the link below:\n\n"
-            "👉 [Download Haseeb Rehman CV](/public/CV-2/Haseeb_Rehman_CV.pdf)\n\n"
-            "It includes his complete professional work history at Digitsio, academic credentials from NUML, and technical project breakdown."
+            "You can download Haseeb's CV here: [Download CV](/public/Haseeb_Rehman_CV.pdf)."
         )
 
     # 3. Projects & Work
     if re.search(r"\b(project|projects|work|showcase|built|apps|websites|veylohr|lizzt|pakhims|vendosphere|dental|opa)\b", q):
         return (
-            "**Featured Projects by Haseeb Rehman 💼**\n\n"
-            "Haseeb has delivered 50+ successful production platforms. Here are several standout highlights:\n\n"
-            "1. **[Veylohr](https://veylohr.com/)** — Full-stack scalable HR management SaaS platform.\n"
-            "2. **[Lizzt](https://lizzt.app/)** — Collaborative event and task app with live updates.\n"
-            "3. **[Pakhims](https://pakhims.com/)** — Hospital management brand portal & healthcare web app.\n"
-            "4. **[VendoSphere](https://ecommerce-one-tau-62.vercel.app/)** — High-performance modern e-commerce platform.\n"
-            "5. **[Illinois Dental](https://dental-website-lovat.vercel.app/)** — Professional healthcare practice web application.\n"
-            "6. **[Opa Bar](https://opa-sable-seven.vercel.app/)** — Dining experience and online reservations.\n\n"
-            "Explore full details on the [Projects Page](/projects)!"
+            "Key projects built by Haseeb:\n\n"
+            "• **[Veylohr](https://veylohr.com/)** — HR management SaaS\n"
+            "• **[Lizzt](https://lizzt.app/)** — Collaborative event and task app\n"
+            "• **[VendoSphere](https://ecommerce-one-tau-62.vercel.app/)** — Modern e-commerce platform\n"
+            "• **[Pakhims](https://pakhims.com/)** — Healthcare brand portal\n\n"
+            "Explore more on the [Projects Page](/projects)."
         )
 
     # 4. Skills & Tech Stack
     if re.search(r"\b(skill|skills|tech|stack|technologies|react|next|node|typescript|python|backend|frontend|languages|tools|database|mongo|postgres)\b", q):
         return (
-            "**Haseeb Rehman's Technical Stack ⚡**\n\n"
-            "• **Frontend:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, Bootstrap 5, GSAP Animations.\n"
-            "• **Backend:** Node.js, NestJS, Express.js, Python, RESTful APIs, Microservices, Socket.io.\n"
-            "• **Databases & Cloud:** PostgreSQL, MongoDB, Supabase, Firebase, Redis, Vercel, Docker.\n"
-            "• **AI & Automation:** Gemini API, OpenAI, Groq LLM pipelines, AI Chatbots, automated workflow integrations.\n"
-            "• **CMS & E-Commerce:** WordPress, Shopify, Webflow, WooCommerce.\n\n"
-            "Haseeb focuses on clean code, responsive layouts, and lightning-fast web performance!"
+            "Haseeb's core tech stack:\n\n"
+            "• **Frontend:** React, Next.js, TypeScript, Tailwind CSS, GSAP\n"
+            "• **Backend:** Node.js, Express, NestJS, Python, REST APIs\n"
+            "• **Databases & Cloud:** PostgreSQL, MongoDB, Supabase, Redis, Docker"
         )
 
     # 5. Services
     if re.search(r"\b(service|services|offer|what\s+do\s+you\s+do|capabilities|what\s+can\s+you\s+build)\b", q):
         return (
-            "**Services Offered by Haseeb Rehman 🛠️**\n\n"
-            "1. **Full-Stack Web Development:** Modern, dynamic web applications built with Next.js, React, and Node.js.\n"
-            "2. **SaaS Product Engineering:** End-to-end multi-tenant platforms with user auth, billing, and database architecture.\n"
-            "3. **AI Chatbots & Intelligent Integration:** Integrating smart assistants and automated business workflows.\n"
-            "4. **API Development & Integrations:** Secure REST APIs, payment gateways (Stripe, PayPal), and CRM syncing.\n"
-            "5. **Performance Optimization:** Core Web Vitals enhancement, high-speed refactoring, and modern SEO.\n\n"
-            "Visit the [Services Page](/services) or message Haseeb to discuss your requirements!"
+            "Haseeb offers:\n\n"
+            "• **Full-Stack Web Development** (React, Next.js, Node.js)\n"
+            "• **SaaS Product Engineering** (Multi-tenant architecture, billing)\n"
+            "• **AI Chatbots & Integrations** (Gemini, OpenAI, automation)\n"
+            "• **API Development & Speed Optimization**"
         )
 
     # 6. About & Education & Experience
     if re.search(r"\b(about|bio|education|degree|numl|cgpa|digitsio|experience|who\s+is\s+haseeb|years)\b", q):
         return (
-            "**About Haseeb Rehman 👨‍💻**\n\n"
-            "• **Current Role:** Senior Web Developer at **Digitsio**.\n"
-            "• **Education:** Bachelor of Science in Computer Science from **NUML Lahore** (CGPA: 3.63).\n"
-            "• **Experience:** 3+ years crafting scalable web apps, SaaS products, and custom websites.\n"
-            "• **Track Record:** 50+ production projects delivered for international clients across USA, Europe, and the Middle East.\n"
-            "• **Location:** Lahore, Pakistan (Available for remote global contracts).\n\n"
-            "Learn more on the [About Page](/about)!"
+            "Haseeb Rehman is a **Senior Full-Stack & SaaS Developer** with 3+ years of experience and 50+ delivered projects. He holds a BS in Computer Science from NUML (CGPA 3.63) and is currently at Digitsio."
         )
 
     # 7. Pure Greetings
     if re.search(r"\b(hi|hello|hey|greetings|aoa|assalam)\b", q):
         return (
-            "**Hello! 👋 Welcome to Haseeb Rehman's Portfolio!**\n\n"
-            "I'm Haseeb's AI Assistant. Haseeb is a **Senior Full-Stack & SaaS Web Developer** with 3+ years of experience and over 50+ projects delivered worldwide.\n\n"
-            "How can I help you today? You can ask about:\n"
-            "• **Skills & Tech Stack**\n"
-            "• **Featured Projects & Demos**\n"
-            "• **Web & SaaS Services**\n"
-            "• **How to Hire or Contact Haseeb**"
+            "Hi there! 👋 How can I help you regarding Haseeb's work or services today?"
         )
 
     # Default general portfolio answer
     return (
-        "**Haseeb Rehman — Senior Full-Stack & SaaS Web Developer**\n\n"
-        "Haseeb specializes in building high-performance web applications, scalable SaaS systems, and custom AI integrations.\n\n"
-        "Here are quick things you can ask me:\n"
-        "• *'What are Haseeb's main skills?'*\n"
-        "• *'Show me projects Haseeb has built'* \n"
-        "• *'What services does Haseeb provide?'*\n"
-        "• *'How can I get in touch with Haseeb?'*\n\n"
-        "You can also reach Haseeb directly on [WhatsApp (+92 326 8795099)](https://wa.me/923268795099) or [Email](mailto:haseebrehman3460@gmail.com)!"
+        "Haseeb Rehman is a Senior Full-Stack & SaaS Developer. Feel free to ask about his **skills**, **projects**, or **services**, or reach him on [WhatsApp (+92 326 8795099)](https://wa.me/923268795099)."
     )
 
 # ----------------- AI Provider 1: Google Gemini -----------------
@@ -326,7 +295,7 @@ def call_gemini_api(user_query: str, history: List[Dict[str, str]] = None) -> st
         "contents": contents,
         "generationConfig": {
             "temperature": 0.4,
-            "maxOutputTokens": 1024,
+            "maxOutputTokens": 450,
             "topP": 0.8
         }
     }
@@ -386,7 +355,7 @@ def call_groq_api(user_query: str, history: List[Dict[str, str]] = None) -> str:
                 "model": model,
                 "messages": messages,
                 "temperature": 0.4,
-                "max_tokens": 1024
+                "max_tokens": 450
             }
 
             url = "https://api.groq.com/openai/v1/chat/completions"
@@ -435,20 +404,20 @@ def process_chat(user_query: str, user_id: str, history: List[Dict[str, str]] = 
             "provider": "default"
         }
 
+    # FAST SHORTCUT: Simple Greetings ("hi", "hello", etc.)
+    clean_q = user_query.strip().lower()
+    if clean_q in ("hi", "hello", "hey", "hola", "aoa", "assalam o alaikum", "assalamualaikum", "hi there", "hey there", "good morning", "good evening"):
+        return {
+            "success": True,
+            "answer": "Hey! 👋 How can I help you today?",
+            "provider": "instant-greet"
+        }
+
     # STEP 1: Strict Scope & Relevance Filter
     if not is_relevant_to_portfolio(user_query):
         return {
             "success": True,
-            "answer": (
-                "I am **Haseeb Rehman's dedicated Portfolio AI Assistant**. I can only assist with questions regarding "
-                "Haseeb's background, technical skills, projects, and web development services.\n\n"
-                "Here are topics you can ask me about:\n"
-                "• **Skills & Stack:** React, Next.js, Node.js, Python, PostgreSQL, AI integrations\n"
-                "• **Featured Projects:** Veylohr SaaS, Lizzt app, VendoSphere, Pakhims Healthcare\n"
-                "• **Services:** Full-Stack Web Development, SaaS Engineering, Custom APIs\n"
-                "• **Hiring & Contact:** Message directly via [WhatsApp (+92 326 8795099)](https://wa.me/923268795099) or [Email](mailto:haseebrehman3460@gmail.com)!\n\n"
-                "*(Note: Haseeb specializes strictly in software engineering and web development, and does not offer graphic design, digital marketing, or non-technical services).*"
-            ),
+            "answer": "I can only assist with questions about Haseeb Rehman's portfolio, web/SaaS projects, technical skills, and development services.",
             "provider": "guardrail",
             "is_off_topic": True
         }

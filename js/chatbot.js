@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Haseeb Rehman Portfolio — AI Chatbot Controller
  * - Bottom-right floating widget matching website theme
  * - Dual AI failover backend (/api/chat)
@@ -16,13 +16,12 @@
     storagePrefix: 'hsb_ai_chat_',
     maxHistoryStored: 20,
     minTypingDelayMs: 1100,
-    welcomeMessage: `**Hi there! 👋 Welcome to Haseeb Rehman's Portfolio.**\n\nI'm Haseeb's dedicated AI Assistant. I can tell you about his full-stack & SaaS experience, technical skills, live projects, or help you connect with him directly.\n\nWhat would you like to explore?`,
+    welcomeMessage: `**Hi! 👋 How can I help you today?**`,
     suggestions: [
       { label: '💼 Services Offered', query: 'What services does Haseeb offer?' },
       { label: '🚀 Featured Projects', query: 'Show me projects built by Haseeb' },
       { label: '⚡ Tech Stack & Skills', query: 'What is Haseeb\'s tech stack and skills?' },
-      { label: '📞 Hire / Contact Haseeb', query: 'How can I hire or contact Haseeb?' },
-      { label: '📄 Download CV', query: 'Where can I download Haseeb\'s CV?' }
+      { label: '📞 Hire / Contact Haseeb', query: 'How can I hire or contact Haseeb?' }
     ]
   };
 
@@ -132,17 +131,11 @@
     container.id = 'hsbChatWidgetContainer';
     container.innerHTML = `
       <!-- Floating Launcher Button -->
-      <button id="hsbChatLauncher" class="hsb-chat-launcher" aria-label="Open Haseeb's AI Assistant" title="Chat with Haseeb's AI">
+      <button id="hsbChatLauncher" class="hsb-chat-launcher" aria-label="Open Haseeb's AI Assistant" title="Chat with me">
         <span class="hsb-launcher-beacon" aria-hidden="true"></span>
         <i class="fa-solid fa-comments hsb-launcher-icon-chat"></i>
         <i class="fa-solid fa-xmark hsb-launcher-icon-close"></i>
       </button>
-
-      <!-- Tooltip Notification / Callout Badge -->
-      <div id="hsbChatTooltip" class="hsb-chat-tooltip" role="button" aria-label="Chat with Haseeb's AI" title="Click to chat with Haseeb's AI">
-        <span class="hsb-tooltip-sparkle">✨</span>
-        <span class="hsb-tooltip-text">Chat with Haseeb's AI</span>
-      </div>
 
       <!-- Chat Window -->
       <div id="hsbChatWindow" class="hsb-chat-window" role="dialog" aria-modal="true" aria-label="Haseeb Rehman AI Assistant">
@@ -159,7 +152,7 @@
               <div class="hsb-header-title">Haseeb Rehman</div>
               <div class="hsb-header-subtitle">
                 <span class="status-indicator"></span>
-                <span>Online &bull; Instant Answers</span>
+                <span>Online Now</span>
               </div>
             </div>
           </div>
@@ -185,7 +178,6 @@
             </button>
           </div>
           <div class="hsb-footer-disclaimer">
-            <span>Portfolio Assistant</span>
             <a href="https://wa.me/923268795099" target="_blank" rel="noopener noreferrer">WhatsApp Direct &rarr;</a>
           </div>
         </div>
