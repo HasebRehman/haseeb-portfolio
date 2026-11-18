@@ -325,16 +325,7 @@ a:focus{
 }
 
 .preloader{
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	z-index: 1000;
-	background: var(--bg-color);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: none !important;
 }
 
 .loading-container,
@@ -6504,7 +6495,7 @@ header.main-header.main-header-elite .navbar{
 }
 
 .hero-elite{
-	background-image: url('../images/hero-bg-image-elite.png');
+	background-image: url('../images/hero-bg-image-elite.webp'), url('../images/hero-bg-image-elite.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
