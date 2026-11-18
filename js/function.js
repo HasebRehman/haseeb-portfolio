@@ -4,9 +4,35 @@
 	var $window = $(window); 
 	var $body = $('body'); 
 
-	/* Preloader Effect */
-	$window.on('load', function(){
-		$(".preloader").fadeOut(600);
+	/* Fast Smooth Preloader Dismiss (Zero Lag) */
+	function fastHidePreloader() {
+		var $p = $(".preloader");
+		if ($p.length && $p.is(":visible")) {
+			$p.css({
+				'transition': 'opacity 0.2s ease',
+				'pointer-events': 'none',
+				'opacity': '0'
+			});
+			setTimeout(function() {
+				$p.hide();
+			}, 200);
+		}
+	}
+	$(document).ready(fastHidePreloader);
+	$window.on('load', fastHidePreloader);
+	setTimeout(fastHidePreloader, 300);
+
+	/* Instant Link Prefetching for Smooth Zero-Lag Navigation */
+	$(document).on('mouseenter touchstart', 'a[href$=".html"]', function() {
+		var href = $(this).attr('href');
+		if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && !href.startsWith('http')) {
+			if (!document.querySelector('link[rel="prefetch"][href="' + href + '"]')) {
+				var link = document.createElement('link');
+				link.rel = 'prefetch';
+				link.href = href;
+				document.head.appendChild(link);
+			}
+		}
 	});
 
 	/* Sticky Header */	
@@ -251,10 +277,6 @@
 		});
 	}
 
-	/* Youtube Background Video JS */
-	if ($('#herovideo').length) {
-		var myPlayer = $("#herovideo").YTPlayer();
-	}
 
 	/* Init Counter */
 	if ($('.counter').length) {

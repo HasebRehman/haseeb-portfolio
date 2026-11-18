@@ -56,6 +56,22 @@
 	<link href="css/custom.css" rel="stylesheet" media="screen">
 	<!-- AI Chatbot Css -->
 	<link href="css/chatbot.css" rel="stylesheet" media="screen">
+	<script>
+		// Fast preloader dismiss: instant smooth transition
+		(function () {
+			function dismiss() {
+				var p = document.querySelector('.preloader');
+				if (p && p.style.display !== 'none') {
+					p.style.transition = 'opacity 0.2s ease';
+					p.style.opacity = '0';
+					setTimeout(function () { p.style.display = 'none'; }, 200);
+				}
+			}
+			document.addEventListener('DOMContentLoaded', dismiss);
+			window.addEventListener('load', dismiss);
+			setTimeout(dismiss, 300);
+		})();
+	</script>
 </head>
 <body>
 
@@ -63,7 +79,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+			<div id="loading-icon"><img loading="eager" decoding="async" src="images/loader.svg" alt=""></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
@@ -75,7 +91,7 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="/">
-						<img src="images/logo.svg" alt="Logo">
+						<img loading="lazy" decoding="async" src="images/logo.svg" alt="Logo">
 					</a>
 					<!-- Logo End -->
 
@@ -136,7 +152,7 @@
                     <!-- About Us Image Start -->
                     <div class="about-us-image wow fadeInUp">
                         <figure>
-                            <img src="images/about-us-hsb.png" alt="Haseeb Rehman">
+                            <img loading="lazy" decoding="async" src="images/about-us-hsb.png" alt="Haseeb Rehman">
                         </figure>
                     </div>
                     <!-- About Us Image End -->
@@ -175,7 +191,7 @@
                             <!-- About Body Item Start -->
                             <div class="about-body-item box-border-gradiant">
                                 <div class="icon-box icon-box-bg-circle">
-                                    <img src="images/icon-about-body-item.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/icon-about-body-item.svg" alt="">
                                 </div>
                                 <div class="about-body-item-content">
                                     <h2><span class="counter">50</span>+</h2>
@@ -214,7 +230,7 @@
                     <div class="approach-item box-border-gradiant wow fadeInUp">
                         <div class="approach-item-image">
                             <figure>
-                                <img src="images/our-approach-item-image-1.png" alt="">
+                                <img loading="lazy" decoding="async" src="images/our-approach-item-image-1.png" alt="">
                             </figure>
                         </div>
                         <div class="approach-item-body">
@@ -238,7 +254,7 @@
                     <div class="approach-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
                         <div class="approach-item-image">
                             <figure>
-                                <img src="images/our-approach-item-image-2.png" alt="">
+                                <img loading="lazy" decoding="async" src="images/our-approach-item-image-2.png" alt="">
                             </figure>
                         </div>
                         <div class="approach-item-body">
@@ -262,7 +278,7 @@
                     <div class="approach-item approach-image-box wow fadeInUp" data-wow-delay="0.4s">
                         <div class="approach-image">
                             <figure>
-                                <img src="images/goals.jpg" alt="My Goals">
+                                <img loading="lazy" decoding="async" src="images/goals.jpg" alt="My Goals">
                             </figure>
                         </div>
                         <div class="approach-item-content">
@@ -280,11 +296,11 @@
                         <div class="satisfy-client-images">
                             <div class="satisfy-client-image">
                                 <figure>
-                                    <img src="images/natasha.jpeg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/natasha.jpeg" alt="">
                                 </figure>
                             </div>
                             <div class="satisfy-client-image add-more">
-                                <img src="images/icon-phone-white.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-phone-white.svg" alt="">
                             </div>
                         </div>
                         <!-- Satisfy Client Images End -->    
@@ -335,7 +351,7 @@
                                         <!-- Tool 2: React.js -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/React.png" alt="React.js">
+                                                <img loading="lazy" decoding="async" src="images/tech/React.png" alt="React.js">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>React.js <span><span class="counter">97</span>%</span></h3>
@@ -357,7 +373,7 @@
                                         <!-- Tool 4: Next.js -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/next.png" alt="Next.js">
+                                                <img loading="lazy" decoding="async" src="images/tech/next.png" alt="Next.js">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Next.js <span><span class="counter">98</span>%</span></h3>
@@ -368,7 +384,7 @@
                                         <!-- Tool 5: Node.js -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/node.png" alt="Node.js">
+                                                <img loading="lazy" decoding="async" src="images/tech/node.png" alt="Node.js">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Node.js <span><span class="counter">95</span>%</span></h3>
@@ -379,7 +395,7 @@
                                         <!-- Tool 6: Express.js -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/express.png" alt="Express.js">
+                                                <img loading="lazy" decoding="async" src="images/tech/express.png" alt="Express.js">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Express.js <span><span class="counter">94</span>%</span></h3>
@@ -395,7 +411,7 @@
                                         <!-- Tool 7: NestJS -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/nest.png" alt="NestJS">
+                                                <img loading="lazy" decoding="async" src="images/tech/nest.png" alt="NestJS">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>NestJS <span><span class="counter">93</span>%</span></h3>
@@ -406,7 +422,7 @@
                                         <!-- Tool 8: MongoDB -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/mongodb.png" alt="MongoDB">
+                                                <img loading="lazy" decoding="async" src="images/tech/mongodb.png" alt="MongoDB">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>MongoDB <span><span class="counter">95</span>%</span></h3>
@@ -417,7 +433,7 @@
                                         <!-- Tool 9: MySQL -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/mysql.png" alt="MySQL">
+                                                <img loading="lazy" decoding="async" src="images/tech/mysql.png" alt="MySQL">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>MySQL <span><span class="counter">94</span>%</span></h3>
@@ -428,7 +444,7 @@
                                         <!-- Tool 10: PostgreSQL -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/postgresql.png" alt="PostgreSQL">
+                                                <img loading="lazy" decoding="async" src="images/tech/postgresql.png" alt="PostgreSQL">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>PostgreSQL <span><span class="counter">95</span>%</span></h3>
@@ -439,7 +455,7 @@
                                         <!-- Tool 11: Supabase -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/supabase.png" alt="Supabase">
+                                                <img loading="lazy" decoding="async" src="images/tech/supabase.png" alt="Supabase">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Supabase <span><span class="counter">96</span>%</span></h3>
@@ -450,7 +466,7 @@
                                         <!-- Tool 12: WordPress -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/wordpress.png" alt="WordPress">
+                                                <img loading="lazy" decoding="async" src="images/tech/wordpress.png" alt="WordPress">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>WordPress <span><span class="counter">98</span>%</span></h3>
@@ -466,7 +482,7 @@
                                         <!-- Tool 13: Shopify -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/shopify.png" alt="Shopify">
+                                                <img loading="lazy" decoding="async" src="images/tech/shopify.png" alt="Shopify">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Shopify <span><span class="counter">97</span>%</span></h3>
@@ -477,7 +493,7 @@
                                         <!-- Tool 14: Webflow -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/webflow.png" alt="Webflow">
+                                                <img loading="lazy" decoding="async" src="images/tech/webflow.png" alt="Webflow">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Webflow <span><span class="counter">96</span>%</span></h3>
@@ -488,7 +504,7 @@
                                         <!-- Tool 15: Wix -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/wix.png" alt="Wix">
+                                                <img loading="lazy" decoding="async" src="images/tech/wix.png" alt="Wix">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Wix <span><span class="counter">94</span>%</span></h3>
@@ -499,7 +515,7 @@
                                         <!-- Tool 16: Git -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/git.png" alt="Git">
+                                                <img loading="lazy" decoding="async" src="images/tech/git.png" alt="Git">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Git <span><span class="counter">96</span>%</span></h3>
@@ -510,7 +526,7 @@
                                         <!-- Tool 17: GitHub -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/github.png" alt="GitHub">
+                                                <img loading="lazy" decoding="async" src="images/tech/github.png" alt="GitHub">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>GitHub <span><span class="counter">98</span>%</span></h3>
@@ -521,7 +537,7 @@
                                         <!-- Tool 18: VS Code -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/vscode.png" alt="VS Code">
+                                                <img loading="lazy" decoding="async" src="images/tech/vscode.png" alt="VS Code">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>VS Code <span><span class="counter">99</span>%</span></h3>
@@ -537,7 +553,7 @@
                                         <!-- Tool 19: Claude -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/claude.jpg" alt="Claude">
+                                                <img loading="lazy" decoding="async" src="images/tech/claude.jpg" alt="Claude">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Claude <span><span class="counter">97</span>%</span></h3>
@@ -548,7 +564,7 @@
                                         <!-- Tool 20: Codex -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/codex.png" alt="Codex">
+                                                <img loading="lazy" decoding="async" src="images/tech/codex.png" alt="Codex">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Codex <span><span class="counter">96</span>%</span></h3>
@@ -581,7 +597,7 @@
                                         <!-- Tool 23: Next.js -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/next.png" alt="Next.js">
+                                                <img loading="lazy" decoding="async" src="images/tech/next.png" alt="Next.js">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>Next.js <span><span class="counter">98</span>%</span></h3>
@@ -592,7 +608,7 @@
                                         <!-- Tool 24: React.js -->
                                         <div class="tools-item box-border-gradiant">
                                             <div class="icon-box">
-                                                <img src="images/tech/React.png" alt="React.js">
+                                                <img loading="lazy" decoding="async" src="images/tech/React.png" alt="React.js">
                                             </div>
                                             <div class="tools-item-content">
                                                 <h3>React.js <span><span class="counter">97</span>%</span></h3>
@@ -616,11 +632,11 @@
                             <div class="satisfy-client-images">
                                 <div class="satisfy-client-image">
                                     <figure>
-                                        <img src="images/natasha.jpeg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/natasha.jpeg" alt="">
                                     </figure>
                                 </div>
                                 <div class="satisfy-client-image add-more">
-                                    <i><img src="images/icon-phone-white.svg" alt=""></i>
+                                    <i><img loading="lazy" decoding="async" src="images/icon-phone-white.svg" alt=""></i>
                                 </div>
                             </div>
                             <!-- Satisfy Client Images End -->    
@@ -662,7 +678,7 @@
                                 </div>
                                 <div class="how-work-item-btn">
                                     <a href="#">
-                                        <img src="images/arrow-white.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -680,7 +696,7 @@
                             </div>
                             <div class="how-work-item-icon-box">
                                 <div class="icon-box icon-box-bg-circle">
-                                    <img src="images/icon-how-it-work-1.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/icon-how-it-work-1.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -700,7 +716,7 @@
                                 </div>
                                 <div class="how-work-item-btn">
                                     <a href="#">
-                                        <img src="images/arrow-white.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -718,7 +734,7 @@
                             </div>
                             <div class="how-work-item-icon-box">
                                 <div class="icon-box icon-box-bg-circle">
-                                    <img src="images/icon-how-it-work-2.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/icon-how-it-work-2.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -738,7 +754,7 @@
                                 </div>
                                 <div class="how-work-item-btn">
                                     <a href="#">
-                                        <img src="images/arrow-white.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -756,7 +772,7 @@
                             </div>
                             <div class="how-work-item-icon-box">
                                 <div class="icon-box icon-box-bg-circle">
-                                    <img src="images/icon-how-it-work-3.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/icon-how-it-work-3.svg" alt="">
                                 </div>
                             </div>
                         </div>
@@ -784,11 +800,11 @@
                         <div class="satisfy-client-images">
                             <div class="satisfy-client-image">
                                 <figure>
-                                    <img src="images/natasha.jpeg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/natasha.jpeg" alt="">
                                 </figure>
                             </div>
                             <div class="satisfy-client-image add-more">
-                                <img src="images/icon-phone-white.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-phone-white.svg" alt="">
                             </div>
                         </div>
                         <!-- Satisfy Client Images End -->    
@@ -826,14 +842,14 @@
                             <div class="what-we-nav-item nav-link active" id="01-tab" data-bs-toggle="tab" data-bs-target="#01" role="tabpanel">
                                 <div class="what-we-nav-item-body">
                                     <div class="icon-box icon-box-bg-circle">
-                                        <img src="images/icon-what-we-3.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/icon-what-we-3.svg" alt="">
                                     </div>
                                     <div class="what-we-nav-item-content">
                                         <h3>Full-Stack Web Development</h3>
                                     </div>
                                 </div>
                                 <div class="what-we-nav-item-btn">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                 </div>
                             </div>
                             <!-- What We Nav Item Box End -->
@@ -842,14 +858,14 @@
                             <div class="what-we-nav-item nav-link" id="02-tab" data-bs-toggle="tab" data-bs-target="#02" role="tabpanel">
                                 <div class="what-we-nav-item-body">
                                     <div class="icon-box icon-box-bg-circle">
-                                        <img src="images/icon-what-we-2.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/icon-what-we-2.svg" alt="">
                                     </div>
                                     <div class="what-we-nav-item-content">
                                         <h3>SaaS Web Development</h3>
                                     </div>
                                 </div>
                                 <div class="what-we-nav-item-btn">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                 </div>
                             </div>
                             <!-- What We Nav Item Box End -->
@@ -858,14 +874,14 @@
                             <div class="what-we-nav-item nav-link" id="03-tab" data-bs-toggle="tab" data-bs-target="#03" role="tabpanel">
                                 <div class="what-we-nav-item-body">
                                     <div class="icon-box icon-box-bg-circle">
-                                        <img src="images/icon-what-we-4.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/icon-what-we-4.svg" alt="">
                                     </div>
                                     <div class="what-we-nav-item-content">
                                         <h3>E-Commerce Solutions</h3>
                                     </div>
                                 </div>
                                 <div class="what-we-nav-item-btn">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                 </div>
                             </div>
                             <!-- What We Nav Item Box End -->
@@ -874,14 +890,14 @@
                             <div class="what-we-nav-item nav-link" id="04-tab" data-bs-toggle="tab" data-bs-target="#04" role="tabpanel">
                                 <div class="what-we-nav-item-body">
                                     <div class="icon-box icon-box-bg-circle">
-                                        <img src="images/icon-what-we-1.svg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/icon-what-we-1.svg" alt="">
                                     </div>
                                     <div class="what-we-nav-item-content">
                                         <h3>CMS & Website Development</h3>
                                     </div>
                                 </div>
                                 <div class="what-we-nav-item-btn">
-                                    <img src="images/arrow-white.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/arrow-white.svg" alt="">
                                 </div>
                             </div>
                             <!-- What We Nav Item Box End -->
@@ -891,7 +907,7 @@
                         <!-- What We Item Start (Full-Stack Web Development) -->
                         <div class="what-we-item tab-pane fade show active" id="01" role="tabpanel">
                             <div class="icon-box icon-box-bg-circle">
-                                <img src="images/icon-what-we-3.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-what-we-3.svg" alt="">
                             </div>
                             <div class="what-we-item-content">
                                 <h3>Full-Stack Web Development</h3>
@@ -914,7 +930,7 @@
                         <!-- What We Item Start (SaaS Web Development) -->
                         <div class="what-we-item tab-pane fade" id="02" role="tabpanel">
                             <div class="icon-box icon-box-bg-circle">
-                                <img src="images/icon-what-we-2.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-what-we-2.svg" alt="">
                             </div>
                             <div class="what-we-item-content">
                                 <h3>SaaS Web Development</h3>
@@ -937,7 +953,7 @@
                         <!-- What We Item Start (E-Commerce Solutions) -->
                         <div class="what-we-item tab-pane fade" id="03" role="tabpanel">
                             <div class="icon-box icon-box-bg-circle">
-                                <img src="images/icon-what-we-4.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-what-we-4.svg" alt="">
                             </div>
                             <div class="what-we-item-content">
                                 <h3>E-Commerce Solutions</h3>
@@ -960,7 +976,7 @@
                         <!-- What We Item Start (CMS & Website Development) -->
                         <div class="what-we-item tab-pane fade" id="04" role="tabpanel">
                             <div class="icon-box icon-box-bg-circle">
-                                <img src="images/icon-what-we-1.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-what-we-1.svg" alt="">
                             </div>
                             <div class="what-we-item-content">
                                 <h3>CMS & Website Development</h3>
@@ -992,11 +1008,11 @@
                             <div class="satisfy-client-images">
                                 <div class="satisfy-client-image">
                                     <figure>
-                                        <img src="images/natasha.jpeg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/natasha.jpeg" alt="">
                                     </figure>
                                 </div>
                                 <div class="satisfy-client-image add-more">
-                                    <img src="images/icon-phone-white.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/icon-phone-white.svg" alt="">
                                 </div>
                             </div>
                             <!-- Satisfy Client Images End -->    
@@ -1030,7 +1046,7 @@
                         <!-- FAQ CTA Box Start -->
                         <div class="faq-cta-box-elite box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
                             <div class="icon-box">
-                                <img src="images/icon-headphone-white.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/icon-headphone-white.svg" alt="">
                             </div>
                             <div class="faq-cta-content-elite">
                                 <h3>Still have you any question?</h3>
@@ -1159,7 +1175,7 @@
                         <!-- Testimonial Review Images Start -->
                         <div class="testimonial-review-image-list">
                             <ul>
-                                <li><img src="images/testimonial-review-img-2.svg" alt=""></li>
+                                <li><img loading="lazy" decoding="async" src="images/testimonial-review-img-2.svg" alt=""></li>
                             </ul>
                         </div>
                         <!-- Testimonial Review Images End -->
@@ -1193,7 +1209,7 @@
                                                 <div class="testimonial-item-author">
                                                     <div class="testimonial-author-image">
                                                         <figure>
-                                                            <img src="images/natasha.jpeg" alt="Natasha">
+                                                            <img loading="lazy" decoding="async" src="images/natasha.jpeg" alt="Natasha">
                                                         </figure>
                                                     </div>
                                                     <div class="testimonial-author-content">
@@ -1201,7 +1217,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="testimonial-item-quote">
-                                                    <img src="images/testimonial-quote.svg" alt="">
+                                                    <img loading="lazy" decoding="async" src="images/testimonial-quote.svg" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -1229,7 +1245,7 @@
                                                 <div class="testimonial-item-author">
                                                     <div class="testimonial-author-image">
                                                         <figure>
-                                                            <img src="images/Ryan.jpg" alt="Ryan">
+                                                            <img loading="lazy" decoding="async" src="images/Ryan.jpg" alt="Ryan">
                                                         </figure>
                                                     </div>
                                                     <div class="testimonial-author-content">
@@ -1237,7 +1253,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="testimonial-item-quote">
-                                                    <img src="images/testimonial-quote.svg" alt="">
+                                                    <img loading="lazy" decoding="async" src="images/testimonial-quote.svg" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -1265,7 +1281,7 @@
                                                 <div class="testimonial-item-author">
                                                     <div class="testimonial-author-image">
                                                         <figure>
-                                                            <img src="images/Michael.jpg" alt="Michael">
+                                                            <img loading="lazy" decoding="async" src="images/Michael.jpg" alt="Michael">
                                                         </figure>
                                                     </div>
                                                     <div class="testimonial-author-content">
@@ -1273,7 +1289,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="testimonial-item-quote">
-                                                    <img src="images/testimonial-quote.svg" alt="">
+                                                    <img loading="lazy" decoding="async" src="images/testimonial-quote.svg" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -1291,11 +1307,11 @@
                             <div class="satisfy-client-images">
                                 <div class="satisfy-client-image">
                                     <figure>
-                                        <img src="images/natasha.jpeg" alt="">
+                                        <img loading="lazy" decoding="async" src="images/natasha.jpeg" alt="">
                                     </figure>
                                 </div>
                                 <div class="satisfy-client-image add-more">
-                                    <img src="images/icon-phone-white.svg" alt="">
+                                    <img loading="lazy" decoding="async" src="images/icon-phone-white.svg" alt="">
                                 </div>
                             </div>
                             <!-- Satisfy Client Images End -->    
@@ -1331,16 +1347,16 @@
                         <div class="footer-header-elite">
                             <!-- Footer Logo Start -->
                             <div class="footer-logo-elite">
-                                <img src="images/logo.svg" alt="">
+                                <img loading="lazy" decoding="async" src="images/logo.svg" alt="">
                             </div>
                             <!-- Footer Logo End -->
 
                             <!-- Footer Contact List Start -->
                             <div class="footer-contact-list-elite">
                                 <ul>
-                                    <li><img src="images/icon-mail-accent.svg" alt=""><a href="mailto:haseebrehman3460@gmail.com">haseebrehman3460@gmail.com</a></li>
-                                    <li><img src="images/icon-phone-accent.svg" alt=""><a href="https://wa.me/923268795099" target="_blank">+92 326 8795099</a></li>
-                                    <li><img src="images/icon-location-accent.svg" alt="">Lahore</li>
+                                    <li><img loading="lazy" decoding="async" src="images/icon-mail-accent.svg" alt=""><a href="mailto:haseebrehman3460@gmail.com">haseebrehman3460@gmail.com</a></li>
+                                    <li><img loading="lazy" decoding="async" src="images/icon-phone-accent.svg" alt=""><a href="https://wa.me/923268795099" target="_blank">+92 326 8795099</a></li>
+                                    <li><img loading="lazy" decoding="async" src="images/icon-location-accent.svg" alt="">Lahore</li>
                                 </ul>
                             </div>
                             <!-- Footer Contact List End -->                            
@@ -1447,8 +1463,6 @@
     <script src="js/jquery.counterup.min.js"></script>
     <!-- Magnific js file -->
     <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
     <!-- Parallax js -->
     <script src="js/parallaxie.js"></script>
     <!-- MagicCursor js file -->
@@ -1457,8 +1471,6 @@
     <!-- Text Effect js file -->
     <script src="js/SplitText.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
     <!-- Wow js file -->
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->

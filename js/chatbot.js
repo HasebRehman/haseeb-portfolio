@@ -53,10 +53,13 @@
     }
   }
 
-  // Helper: Load history
+  // Helper: Load history (Session-only: automatically removed when browser/tab closes)
   function loadHistory() {
     try {
-      const data = localStorage.getItem(CONFIG.storagePrefix + 'history');
+      // Clear any legacy localStorage chat history so it doesn't linger
+      localStorage.removeItem(CONFIG.storagePrefix + 'history');
+
+      const data = sessionStorage.getItem(CONFIG.storagePrefix + 'history');
       if (data) {
         return JSON.parse(data);
       }
@@ -64,11 +67,11 @@
     return [];
   }
 
-  // Helper: Save history
+  // Helper: Save history (Stored in sessionStorage; removed when site is closed)
   function saveHistory(messages) {
     try {
       const trimmed = messages.slice(-CONFIG.maxHistoryStored);
-      localStorage.setItem(CONFIG.storagePrefix + 'history', JSON.stringify(trimmed));
+      sessionStorage.setItem(CONFIG.storagePrefix + 'history', JSON.stringify(trimmed));
     } catch (e) {}
   }
 
@@ -423,6 +426,10 @@
   async function resetConversation() {
     chatHistory = [];
     saveHistory([]);
+    try {
+      sessionStorage.removeItem(CONFIG.storagePrefix + 'history');
+      localStorage.removeItem(CONFIG.storagePrefix + 'history');
+    } catch (e) {}
     const chatBody = document.getElementById('hsbChatBody');
     if (chatBody) chatBody.innerHTML = '';
 
